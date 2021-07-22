@@ -1,0 +1,233 @@
+<h1>Pages#index</h1>
+<hr>
+<% if signed_in? %>
+<p>Signed In as: <%= current_user.email %></p>
+<p>User ID: <%= current_user.id %></p>
+<p>Edit User: <%= link_to "Edit User Info", edit_user_registration_path(current_user) %></p>
+<p>Logout: <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?'} %></p>
+<% else %>
+<p>Not Signed In</p>
+<p>Vist Signin Page: <%= link_to "Sign in", new_user_session_path %></p>
+<p>Vist Signup Page: <%= link_to "Sign up", new_user_registration_path %></p>
+<% end %>
+<hr>
+<p>Devise Routes(routes that comes with devise)</p>
+
+<table id="route_table" class="route_table">
+  <thead>
+    <tr>
+      <th>Helper</th>
+      <th>HTTP Verb</th>
+      <th>Path</th>
+      <th>Controller#Action</th>
+    </tr>
+  </thead>
+  <tbody>
+
+<tr class="route_row" data-helper="path">
+  <td data-route-name="new_user_session">
+      new_user_session<span class="helper">_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path="/users/sign_in(.:format)">
+    /users/sign_in(.:format)
+  </td>
+  <td>
+    <p>devise/sessions#new</p>
+  </td>
+</tr>
+<tr class="route_row" data-helper="path">
+  <td data-route-name="user_session">
+      user_session<span class="helper">_path</span>
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path="/users/sign_in(.:format)">
+    /users/sign_in(.:format)
+  </td>
+  <td>
+    <p>devise/sessions#create</p>
+  </td>
+</tr>
+<tr class="route_row" data-helper="path">
+  <td data-route-name="destroy_user_session">
+      destroy_user_session<span class="helper">_path</span>
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path="/users/sign_out(.:format)">
+    /users/sign_out(.:format)
+  </td>
+  <td>
+    <p>devise/sessions#destroy</p>
+  </td>
+</tr>
+<tr class="route_row" data-helper="path">
+  <td data-route-name="new_user_password">
+      new_user_password<span class="helper">_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path="/users/password/new(.:format)">
+    /users/password/new(.:format)
+  </td>
+  <td>
+    <p>devise/passwords#new</p>
+  </td>
+</tr>
+<tr class="route_row" data-helper="path">
+  <td data-route-name="edit_user_password">
+      edit_user_password<span class="helper">_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path="/users/password/edit(.:format)">
+    /users/password/edit(.:format)
+  </td>
+  <td>
+    <p>devise/passwords#edit</p>
+  </td>
+</tr>
+<tr class="route_row" data-helper="path">
+  <td data-route-name="user_password">
+      user_password<span class="helper">_path</span>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path="/users/password(.:format)">
+    /users/password(.:format)
+  </td>
+  <td>
+    <p>devise/passwords#update</p>
+  </td>
+</tr>
+<tr class="route_row" data-helper="path">
+  <td data-route-name="">
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path="/users/password(.:format)">
+    /users/password(.:format)
+  </td>
+  <td>
+    <p>devise/passwords#update</p>
+  </td>
+</tr>
+<tr class="route_row" data-helper="path">
+  <td data-route-name="">
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path="/users/password(.:format)">
+    /users/password(.:format)
+  </td>
+  <td>
+    <p>devise/passwords#create</p>
+  </td>
+</tr>
+<tr class="route_row" data-helper="path">
+  <td data-route-name="cancel_user_registration">
+      cancel_user_registration<span class="helper">_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path="/users/cancel(.:format)">
+    /users/cancel(.:format)
+  </td>
+  <td>
+    <p>devise/registrations#cancel</p>
+  </td>
+</tr>
+<tr class="route_row" data-helper="path">
+  <td data-route-name="new_user_registration">
+      new_user_registration<span class="helper">_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path="/users/sign_up(.:format)">
+    /users/sign_up(.:format)
+  </td>
+  <td>
+    <p>devise/registrations#new</p>
+  </td>
+</tr>
+<tr class="route_row" data-helper="path">
+  <td data-route-name="edit_user_registration">
+      edit_user_registration<span class="helper">_path</span>
+  </td>
+  <td>
+    GET
+  </td>
+  <td data-route-path="/users/edit(.:format)">
+    /users/edit(.:format)
+  </td>
+  <td>
+    <p>devise/registrations#edit</p>
+  </td>
+</tr>
+<tr class="route_row" data-helper="path">
+  <td data-route-name="user_registration">
+      user_registration<span class="helper">_path</span>
+  </td>
+  <td>
+    PATCH
+  </td>
+  <td data-route-path="/users(.:format)">
+    /users(.:format)
+  </td>
+  <td>
+    <p>devise/registrations#update</p>
+  </td>
+</tr>
+<tr class="route_row" data-helper="path">
+  <td data-route-name="">
+  </td>
+  <td>
+    PUT
+  </td>
+  <td data-route-path="/users(.:format)">
+    /users(.:format)
+  </td>
+  <td>
+    <p>devise/registrations#update</p>
+  </td>
+</tr>
+<tr class="route_row" data-helper="path">
+  <td data-route-name="">
+  </td>
+  <td>
+    DELETE
+  </td>
+  <td data-route-path="/users(.:format)">
+    /users(.:format)
+  </td>
+  <td>
+    <p>devise/registrations#destroy</p>
+  </td>
+</tr>
+<tr class="route_row" data-helper="path">
+  <td data-route-name="">
+  </td>
+  <td>
+    POST
+  </td>
+  <td data-route-path="/users(.:format)">
+    /users(.:format)
+  </td>
+  <td>
+    <p>devise/registrations#create</p>
+  </td>
+</tr>
+  </tbody>
+</table>
